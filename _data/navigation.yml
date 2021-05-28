@@ -1,7 +1,7 @@
 # main links links
 main:
   - title: "Publications"
-    url: /publications/
+    url: https://tmo324.github.io//publications/
 
 #  - title: "Talks"
 #    url: /talks/    
@@ -19,7 +19,7 @@ main:
 #    url: /cv/
  
   - title: "Contact"
-    url: /contact/  
+    url: https://tmo324.github.io//contact/  
     
 #  - title: "Guide"
 #    url: /markdown/
