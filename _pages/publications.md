@@ -4,13 +4,19 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
+<br>
+<b>[Design Considerations for Energy-efficient Inference on Edge Devices] (https://tmo324.github.io/publications/DCEIED)</b> <br> 
+Walid A. Hanafy, <b>Tergel Molom-Ochir</b>, Rohan Shenoy
+<i> The 2nd International Workshop on Energy-Efficient Learning at the Edge </i>. <b>WEEE 2021</b>.
 
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-{% endif %}
+<b>[Poster Abstract: WiFiMon: A Mobility Analytics Platform for Building Occupancy Monitoring and Contact Tracing Using WiFi Sensing] (https://tmo324.github.io/publications/wifimon)</b> <br> 
+Emmanuel Cecchet, Amrita Acharya, <b>Tergel Molom-Ochir</b>, Amee Trivedi, Prashant Shenoy
+<i>Proceedings of the 18th Conference on Embedded Networked Sensor Systems</i>. <b>SenSys 2020:</b>.
 
-{% include base_path %}
+<b>[WiSleep: Scalable Sleep Monitoring Using Passive WiFi Sensing] (https://tmo324.github.io/publications/wisleep)</b> <br> 
+Priyanka Mary Mammen, Camellia Zakaria, <b>Tergel Molom-Ochir</b>, Amee Trivedi, Prashant Shenoy, Rajesh Balan
+<i>Preprint. 	arXiv:2102.03690</i>
 
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<b>[MARCo: Solar Powered Autonomous Robotic Unmanned Surface Vehicle] (https://tmo324.github.io/publications/marco)</b> <br> 
+<b>Tergel Molom-Ochir</b>, Robert J. Twiggs, Thomas G. Pannuti
+<i>Journal of Undergraduate Research</i>. <b>To be published</b>.
