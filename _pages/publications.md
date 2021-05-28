@@ -3,7 +3,6 @@ title: "Publications [(Google Scholar Profile)](https://scholar.google.com/citat
 permalink: /publications/
 author_profile: true
 ---
-<br>
 <b>[Design Considerations for Energy-efficient Inference on Edge Devices](https://tmo324.github.io/publications/DCEIED)</b> <br> 
 Walid A. Hanafy, <b>Tergel Molom-Ochir</b>, Rohan Shenoy
 <i> The 2nd International Workshop on Energy-Efficient Learning at the Edge </i>. <b>WEEE 2021</b>.
