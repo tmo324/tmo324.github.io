@@ -1,6 +1,7 @@
 ---
 title: "MARCo: Solar Powered Autonomous Robotic Unmanned Surface Vehicle"
 collection: publications
+permalink: /publications/marco
 ---
 
 ## Abstract
