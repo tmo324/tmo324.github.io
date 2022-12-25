@@ -24,4 +24,4 @@ Priyanka Mary Mammen, Camellia Zakaria, <b>Tergel Molom-Ochir</b>, Amee Trivedi,
 
 <b>[MARCo: Solar Powered Autonomous Robotic Unmanned Surface Vehicle](https://tmo324.github.io/publications/marco)</b> <br> 
 <b>Tergel Molom-Ochir</b>, Robert J. Twiggs, Thomas G. Pannuti
-<i>Journal of Undergraduate Research</i>. <b>To be published</b>.
+<i>Journal of Undergraduate Research</i>. <b>JUR Press Vol 11</b>.
