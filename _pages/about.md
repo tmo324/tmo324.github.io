@@ -11,7 +11,7 @@ redirect_from:
 
 # About
 I am an undergrad in the [Electrical and Computer Engineering Department](https://ece.umass.edu/) at [University of Massachusetts Amherst
-](https://www.umass.edu/). I am an undergraduate researcher at the Laboratory for Advanced System Software (LASS), University of Massachusetts Amherst, where I work with Prof. [Prashant Shenoy](https://people.cs.umass.edu/~shenoy/). My research focuses on deep learning hardware, edge devices, mobile edge computing, and efficient AI.
+](https://www.umass.edu/). I am an undergraduate researcher at the Laboratory for Advanced System Software (LASS), University of Massachusetts Amherst, where I am advised by Prof. [Prashant Shenoy](https://people.cs.umass.edu/~shenoy/). My research focuses on deep learning hardware, edge devices, mobile edge computing, and efficient AI.
 
 # Recent News
 * Dec 2022: The Fall 2022 Rising Researchers University of Massachusetts Amherst
