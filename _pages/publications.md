@@ -3,6 +3,10 @@ title: "Publications [(Google Scholar Profile)](https://scholar.google.com/citat
 permalink: /publications/
 author_profile: true
 ---
+<b>[Energy and Cost Considerations for GPU Accelerated AI Inference Workloads](https://tmo324.github.io/publications/miturtc)</b> <br> 
+<b>Tergel Molom-Ochir</b>, Rohan Shenoy
+<i> 2021 IEEE MIT Undergraduate Research Technology Conference (URTC)</i>. <b>IEEE</b>.
+
 <b>[Design Considerations for Energy-efficient Inference on Edge Devices](https://tmo324.github.io/publications/DCEIED)</b> <br> 
 Walid A. Hanafy, <b>Tergel Molom-Ochir</b>, Rohan Shenoy
 <i> The 2nd International Workshop on Energy-Efficient Learning at the Edge </i>. <b>WEEE 2021</b>.
