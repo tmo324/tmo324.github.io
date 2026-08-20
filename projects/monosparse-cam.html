@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://tmo324.github.io/projects/monosparse-cam.html" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="MonoSparse-CAM is Tergel Molom-Ochir's first-author ISCAS 2025 work on efficient tree-model processing through CAM sparsity and monotonicity." />
+<meta name="author" content="Tergel Molom-Ochir" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="MonoSparse-CAM | Tergel Molom-Ochir" />
+<meta property="og:description" content="A hardware-software co-design that skips empty cells and already-mismatched rows during tree-model processing in analog CAM." />
+<meta property="og:url" content="https://tmo324.github.io/projects/monosparse-cam.html" />
+<meta property="og:image" content="https://tmo324.github.io/images/project_monosparse.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="640" />
+<meta property="og:image:alt" content="MonoSparse-CAM method: group active cells and track live matchlines to skip redundant CAM operations" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="../jemdoc.css" type="text/css" />
+<link rel="shortcut icon" type="image/x-icon" href="../misc/favicon.ico" />
+<title>MonoSparse-CAM | Tergel Molom-Ochir</title>
+</head>
+<body>
+<nav id="top-nav" aria-label="Primary">
+<div class="nav-inner">
+<a class="site-name" href="../">Tergel Molom-Ochir</a>
+<div class="nav-links">
+<a href="../">About</a>
+<a href="../research.html" class="current">Research</a>
+<a href="../publications.html">Publications</a>
+<a href="../activities.html">Teaching &amp; Service</a>
+<a href="../files/CV_Tergel_Molom-Ochir.pdf" target="_blank" rel="noopener">CV</a>
+</div>
+</div>
+</nav>
+
+<main id="layout-content" class="project-page">
+<p class="project-breadcrumb"><a href="../research.html">Research</a> / Associative-memory architectures</p>
+<header class="project-header">
+<p class="project-kicker">IEEE ISCAS 2025 &middot; First Author</p>
+<h1>MonoSparse-CAM: Efficient Tree Model Processing via Monotonicity and Sparsity in CAMs</h1>
+<p class="project-lead">MonoSparse-CAM combines model sparsity with a circuit invariant to stop loading cells and evaluating rows that can no longer affect the answer.</p>
+<div class="project-actions">
+<a class="button-link primary" href="https://doi.org/10.1109/ISCAS56072.2025.11043997" target="_blank" rel="noopener">Published paper</a>
+<a class="button-link" href="https://arxiv.org/abs/2407.11071" target="_blank" rel="noopener">Preprint</a>
+</div>
+</header>
+
+<figure class="project-hero project-hero-contained">
+<img src="../images/project_monosparse.svg" alt="MonoSparse-CAM groups active feature cells and tracks live matchlines to skip redundant operations" width="1200" height="640" />
+<figcaption>Feature reordering skips empty tiles, while a status register prevents later work on matchlines that have already discharged.</figcaption>
+</figure>
+
+<div class="metric-grid" role="group" aria-label="MonoSparse-CAM headline results">
+<div class="metric-card"><p class="metric-value">28.56&times;</p><p class="metric-label">maximum energy reduction versus raw CAM processing</p></div>
+<div class="metric-card"><p class="metric-value">18.51&times;</p><p class="metric-label">maximum energy reduction versus the prior feature-reordering technique</p></div>
+<div class="metric-card"><p class="metric-value">0.40 &micro;J</p><p class="metric-label">mean across sparsity levels for a 240&times;320 model on a 24&times;48 CAM, versus 3.77 &micro;J raw</p></div>
+<div class="metric-card"><p class="metric-value">418 GOPS/W</p><p class="metric-label">peak simulated computational efficiency</p></div>
+</div>
+
+<section class="project-section">
+<h2>Problem</h2>
+<p>Decision trees map naturally into analog CAM rows, but large models must be tiled across smaller arrays. Conventional execution still spends energy on don't-care cells and keeps comparing rows that already mismatched. Feature reordering helps sparse models, but loses effectiveness as mapped arrays become denser.</p>
+</section>
+
+<section class="project-section">
+<h2>Approach</h2>
+<ul class="project-points">
+<li><p><b>Exploit sparsity:</b> reorder features so active cells are concentrated, allowing empty feature tiles to be skipped.</p></li>
+<li><p><b>Exploit monotonicity:</b> once a precharged matchline discharges after a mismatch, it cannot recover during that search.</p></li>
+<li><p><b>Track live rows:</b> a compact status register records surviving matchlines so all later operations on dead rows can be suppressed.</p></li>
+</ul>
+</section>
+
+<section class="project-section role-section">
+<h2>My Role</h2>
+<p>As first author, I led MonoSparse-CAM, a hardware-software co-design that combines tree-model sparsity with matchline monotonicity to eliminate redundant CAM operations.</p>
+</section>
+
+<aside class="method-note">
+<h2>How to Read the Results</h2>
+<p>The results are simulation-based, combining a 65 nm HSPICE model of a 6T2M analog CAM with Python system modeling and CACTI register costs. The study assumes ideal memristor behavior and does not include memristor reprogramming energy. The 418 GOPS/W figure is computational efficiency, not throughput.</p>
+</aside>
+
+<section class="project-section">
+<h2>Citation</h2>
+<div class="citation-box">
+<p><b>T. Molom-Ochir</b>, B. Taylor, H. Li, and Y. Chen, "MonoSparse-CAM: Efficient Tree Model Processing via Monotonicity and Sparsity in CAMs," <i>2025 IEEE International Symposium on Circuits and Systems (ISCAS)</i>, pp. 1&ndash;5, 2025. <a href="https://doi.org/10.1109/ISCAS56072.2025.11043997" target="_blank" rel="noopener">DOI</a></p>
+</div>
+</section>
+
+<section class="related-projects">
+<h2>Related Projects</h2>
+<div class="related-grid">
+<a class="related-card" href="camformer.html"><b>CAMformer</b><span>Use associative memory for transformer attention.</span></a>
+<a class="related-card" href="imc-mcts.html"><b>IMC-MCTS</b><span>Coordinate multiple memory primitives for tree search.</span></a>
+</div>
+</section>
+</main>
+</body>
+</html>

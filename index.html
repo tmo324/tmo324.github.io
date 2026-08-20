@@ -52,7 +52,7 @@
       "jobTitle": "Ph.D. Candidate, Electrical and Computer Engineering",
       "affiliation": [
         {"@type": "CollegeOrUniversity", "name": "Duke University", "url": "https://ece.duke.edu/"},
-        {"@type": "Organization", "name": "Hewlett Packard Labs", "url": "https://www.hpe.com/us/en/hewlett-packard-labs.html"}
+        {"@type": "Organization", "name": "Hewlett Packard Labs", "url": "https://www.hpe.com/us/en/hpe-labs.html"}
       ],
       "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of Massachusetts Amherst"},
       "email": "mailto:tergel.molom-ochir@duke.edu",
@@ -76,7 +76,7 @@
 </script>
 </head>
 <body>
-<div id="top-nav">
+<nav id="top-nav" aria-label="Primary">
 <div class="nav-inner">
 <a class="site-name" href="/">Tergel Molom-Ochir</a>
 <div class="nav-links">
@@ -87,9 +87,9 @@
 <a href="files/CV_Tergel_Molom-Ochir.pdf" target="_blank" rel="noopener">CV</a>
 </div>
 </div>
-</div>
+</nav>
 
-<div id="layout-content" class="homepage">
+<main id="layout-content" class="homepage">
 <div class="home-hero">
 <div class="home-portrait">
 <img src="misc/profile.jpg" alt="Portrait of Tergel Molom-Ochir" width="165" height="220" />
@@ -97,7 +97,7 @@
 <div class="hero-copy">
 <h1>Tergel Molom-Ochir</h1>
 <p class="hero-role">Ph.D. Candidate, <a href="https://ece.duke.edu/" target="_blank" rel="noopener">Duke ECE</a><br />
-Research Associate, <a href="https://www.hpe.com/us/en/hewlett-packard-labs.html" target="_blank" rel="noopener">Hewlett Packard Labs</a></p>
+Research Associate, <a href="https://www.hpe.com/us/en/hpe-labs.html" target="_blank" rel="noopener">Hewlett Packard Labs</a></p>
 <p class="hero-label">In-memory acceleration of search and reasoning</p>
 <p class="hero-summary">I build emerging-device circuits and associative-memory architectures that turn memory into an active engine for AI inference, retrieval, and reasoning.</p>
 <div class="hero-actions">
@@ -150,24 +150,24 @@ Research Associate, <a href="https://www.hpe.com/us/en/hewlett-packard-labs.html
 <h2>Selected First-Author Work</h2>
 <div class="work-grid">
 <div class="work-card">
-<p class="work-meta">IEEE TCAS-I &middot; 2026</p>
-<h3>CAMformer: Binary Associative Memory Is All You Need</h3>
-<p>Recasts transformer attention as associative-memory retrieval using a binary attention CAM.</p>
-<p class="work-links"><a href="https://doi.org/10.1109/TCSI.2026.3692014" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/abs/2511.19740" target="_blank" rel="noopener">Preprint</a></p>
+<p class="work-meta">arXiv &middot; 2026</p>
+<h3>Multi-primitive in-memory computing for Monte Carlo tree search</h3>
+<p>Coordinates CAM, SRAM, RRAM, logic, and TCAM control as one accelerator for iterative tree search.</p>
+<p class="work-links"><a href="projects/imc-mcts.html">Project</a><a href="https://arxiv.org/abs/2607.22869" target="_blank" rel="noopener">Preprint</a></p>
 </div>
 
 <div class="work-card">
-<p class="work-meta">IEEE TCAS-I &middot; 2025</p>
-<h3>Advancements in Content-Addressable Memory Circuits</h3>
-<p>Surveys 37 CAM cell designs, AI applications, and open directions for associative-memory hardware.</p>
-<p class="work-links"><a href="https://doi.org/10.1109/TCSI.2025.3527309" target="_blank" rel="noopener">Paper</a></p>
+<p class="work-meta">IEEE TCAS-I &middot; 2026</p>
+<h3>CAMformer: Binary Associative Memory Is All You Need</h3>
+<p>Recasts transformer attention as associative-memory retrieval using a binary attention CAM.</p>
+<p class="work-links"><a href="projects/camformer.html">Project</a><a href="https://doi.org/10.1109/TCSI.2026.3692014" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/abs/2511.19740" target="_blank" rel="noopener">Preprint</a></p>
 </div>
 
 <div class="work-card">
 <p class="work-meta">IEEE ISCAS &middot; 2025</p>
 <h3>MonoSparse-CAM</h3>
 <p>Exploits tree-model sparsity and monotonicity in CAM circuitry to reduce unnecessary computation.</p>
-<p class="work-links"><a href="https://doi.org/10.1109/ISCAS56072.2025.11043997" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/abs/2407.11071" target="_blank" rel="noopener">Preprint</a></p>
+<p class="work-links"><a href="projects/monosparse-cam.html">Project</a><a href="https://doi.org/10.1109/ISCAS56072.2025.11043997" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/abs/2407.11071" target="_blank" rel="noopener">Preprint</a></p>
 </div>
 
 <div class="work-card">
@@ -190,6 +190,6 @@ Research Associate, <a href="https://www.hpe.com/us/en/hewlett-packard-labs.html
 <li><p><span class="news-date">Mar 2026</span><span class="news-copy">DirectGeMM accepted at <b>ISCAS 2026</b>.</span></p></li>
 <li><p><span class="news-date">Feb 2026</span><span class="news-copy">Filed a patent application for an in-memory MCTS accelerator developed at Hewlett Packard Enterprise.</span></p></li>
 </ul>
-</div>
+</main>
 </body>
 </html>
