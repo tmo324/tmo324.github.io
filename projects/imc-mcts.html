@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://tmo324.github.io/projects/imc-mcts.html" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="IMC-MCTS is Tergel Molom-Ochir's first-author work on a multi-primitive in-memory accelerator for Monte Carlo tree search." />
+<meta name="author" content="Tergel Molom-Ochir" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="IMC-MCTS | Tergel Molom-Ochir" />
+<meta property="og:description" content="A multi-primitive in-memory architecture for Monte Carlo tree search, evaluated through 22 nm modeling, RTL synthesis, and cycle simulation." />
+<meta property="og:url" content="https://tmo324.github.io/projects/imc-mcts.html" />
+<meta property="og:image" content="https://tmo324.github.io/images/research_inference.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="../jemdoc.css" type="text/css" />
+<link rel="shortcut icon" type="image/x-icon" href="../misc/favicon.ico" />
+<title>IMC-MCTS | Tergel Molom-Ochir</title>
+</head>
+<body>
+<nav id="top-nav" aria-label="Primary">
+<div class="nav-inner">
+<a class="site-name" href="../">Tergel Molom-Ochir</a>
+<div class="nav-links">
+<a href="../">About</a>
+<a href="../research.html" class="current">Research</a>
+<a href="../publications.html">Publications</a>
+<a href="../activities.html">Teaching &amp; Service</a>
+<a href="../files/CV_Tergel_Molom-Ochir.pdf" target="_blank" rel="noopener">CV</a>
+</div>
+</div>
+</nav>
+
+<main id="layout-content" class="project-page">
+<p class="project-breadcrumb"><a href="../research.html">Research</a> / Search and reasoning</p>
+<header class="project-header">
+<p class="project-kicker">arXiv 2026 &middot; First and Corresponding Author &middot; HPE Labs</p>
+<h1>Multi-primitive in-memory computing for Monte Carlo tree search</h1>
+<p class="project-lead">IMC-MCTS decomposes tree search into the memory and logic operations each phase actually needs, then coordinates them as one accelerator.</p>
+<div class="project-actions">
+<a class="button-link primary" href="https://arxiv.org/abs/2607.22869" target="_blank" rel="noopener">Preprint</a>
+<a class="button-link" href="https://arxiv.org/pdf/2607.22869" target="_blank" rel="noopener">PDF</a>
+</div>
+</header>
+
+<figure class="project-hero project-hero-contained">
+<img src="../images/research_inference.png" alt="IMC-MCTS architecture connecting CAM, SRAM, RRAM, combinational logic, and TCAM control" width="910" height="518" />
+<figcaption>Each phase of Monte Carlo tree search is mapped to a matching compute or memory primitive and orchestrated through a feedback loop.</figcaption>
+</figure>
+
+<div class="metric-grid" role="group" aria-label="IMC-MCTS evaluation scale and modeled results">
+<div class="metric-card"><p class="metric-value">124.18 mJ</p><p class="metric-label">modeled energy per 9&times;9 Go move at 5,000 search iterations</p></div>
+<div class="metric-card"><p class="metric-value">60.26 mW</p><p class="metric-label">modeled sustained accelerator power in the evaluated setup</p></div>
+<div class="metric-card"><p class="metric-value">1,050 games</p><p class="metric-label">9&times;9 Go round-robin evaluation at 500 simulations per move</p></div>
+<div class="metric-card"><p class="metric-value">8 applications</p><p class="metric-label">mapped across four domains to test substrate reuse</p></div>
+</div>
+
+<section class="project-section">
+<h2>Problem</h2>
+<p>Monte Carlo tree search alternates between irregular tree lookup, expansion, learned evaluation, statistical update, and control. A single conventional compute primitive is poorly matched to all five phases, while moving state among separate accelerators can erase the benefit.</p>
+</section>
+
+<section class="project-section">
+<h2>Approach</h2>
+<ul class="project-points">
+<li><p><b>Selection:</b> a 6T SRAM CAM and SRAM locate nodes and evaluate the tree policy.</p></li>
+<li><p><b>Expansion:</b> combinational game logic generates legal successor states.</p></li>
+<li><p><b>Rollout:</b> a two-layer analog RRAM crossbar evaluates candidate positions.</p></li>
+<li><p><b>Backpropagation:</b> SRAM stores and updates visit and reward statistics.</p></li>
+<li><p><b>Control:</b> a TCAM finite-state machine coordinates the recurrent search loop.</p></li>
+</ul>
+</section>
+
+<section class="project-section role-section">
+<h2>My Role</h2>
+<p>I conceived the phase-to-primitive decomposition, designed the architecture, performed RTL synthesis and cycle simulation, ran the Go tournament and cross-domain evaluations, and led the manuscript.</p>
+</section>
+
+<aside class="method-note">
+<h2>How to Read the Results</h2>
+<p>The architecture is evaluated through 22 nm modeling, RTL synthesis, and cycle simulation using fabricated RRAM-array parameters. It is not a fabricated full-system chip. In the evaluated 9&times;9 Go setup, the model reports 124.18 mJ per move versus 11,920 mJ for the AMD traditional-MCTS baseline. That 96&times; end-to-end difference includes both evaluator-algorithm and hardware choices, so it should not be read as a pure hardware-only speedup.</p>
+</aside>
+
+<section class="project-section">
+<h2>Citation</h2>
+<div class="citation-box">
+<p><b>T. Molom-Ochir</b>, B. F. Morris III, Y. He, A. Gajjar, G. Pedretti, H. Li, Y. Chen, J. Ignowski, and A. Natarajan, "Multi-primitive in-memory computing for Monte Carlo tree search," <i>arXiv:2607.22869</i>, 2026. <a href="https://doi.org/10.48550/arXiv.2607.22869" target="_blank" rel="noopener">DOI</a></p>
+</div>
+</section>
+
+<section class="related-projects">
+<h2>Related Projects</h2>
+<div class="related-grid">
+<a class="related-card" href="camformer.html"><b>CAMformer</b><span>Use associative memory for transformer attention.</span></a>
+<a class="related-card" href="monosparse-cam.html"><b>MonoSparse-CAM</b><span>Exploit sparsity and monotonicity in CAM processing.</span></a>
+</div>
+</section>
+</main>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <link rel="canonical" href="https://tmo324.github.io/research.html" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Research thrusts by Tergel Molom-Ochir spanning memristive substrates, associative memory circuits, and hardware for AI inference and reasoning, including CAMformer, MonoSparse-CAM, IMC-MCTS, and 3D Cellular Neural Networks." />
+<meta name="description" content="Tergel Molom-Ochir develops in-memory hardware for AI search and reasoning across emerging devices, associative-memory circuits, and system architectures." />
 <meta name="keywords" content="Tergel Molom-Ochir, research, content-addressable memory, in-memory computing, memristive substrates, CAMformer, MonoSparse-CAM, IMC-MCTS, 3D Cellular Neural Networks, neuromorphic" />
 <meta name="author" content="Tergel Molom-Ochir" />
 <meta property="og:type" content="article" />
@@ -19,7 +19,7 @@
 <title>Research | Tergel Molom-Ochir</title>
 </head>
 <body>
-<div id="top-nav">
+<nav id="top-nav" aria-label="Primary">
 <div class="nav-inner">
 <a class="site-name" href="/">Tergel Molom-Ochir</a>
 <div class="nav-links">
@@ -30,26 +30,67 @@
 <a href="files/CV_Tergel_Molom-Ochir.pdf" target="_blank" rel="noopener">CV</a>
 </div>
 </div>
-</div>
-<div id="layout-content">
+</nav>
+<main id="layout-content" class="research-page">
 <div id="toptitle">
 <h1>Research</h1>
 </div>
 
-<p>I design <b>memristive associative memory hardware for AI inference and reasoning</b>, working across the device&ndash;circuit&ndash;architecture stack to make associative computation a first-class primitive in modern AI systems. My work spans three thrusts:</p>
-
-<h2>Memristive Substrates</h2>
-<p>Device-level cells, volumetric arrays, and characterization for in-memory computing.</p>
-<p><b>Projects:</b> 3D Cellular Neural Networks for volumetric computing (with <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/chua.html" target="_blank">Chua</a>, <a href="https://engineering.tamu.edu/electrical/profiles/williams-stan.html" target="_blank">Williams</a>, <a href="https://www.umass.edu/engineering/about/directory/qiangfei-xia" target="_blank">Xia</a>); RRAM crossbar device characterization with HPE Labs.</p>
-
-<h2>Associative Memory Circuits</h2>
-<p>CAM cells, arrays, and architectures for attention, retrieval, and similarity matching at hardware scale.</p>
-<p><b>Projects:</b> CAMformer (associative memory for attention), MonoSparse-CAM (tree models in CAM), NP-CAM (scalable CAM architectures), and a comprehensive review of 37 CAM cell designs in <i>IEEE TCAS-I</i>.</p>
-
-<h2>Hardware for Inference and Reasoning</h2>
-<p>Algorithm&ndash;hardware co-design for the workloads associative memory enables: attention, tree search, neuro-symbolic reasoning, and test-time compute.</p>
-<p><b>Projects:</b> IMC-MCTS (in-memory tree search), Neuro-Symbolic Policy (rule lookup in CAM), Hamming Attention Distillation (binarized attention).</p>
-
+<div class="research-intro">
+<p class="research-statement">My research asks a single question: <b>how can memory do more than store data?</b></p>
+<p>I build emerging-device circuits and associative-memory architectures that execute search, retrieval, and iterative reasoning where data already lives. The program connects three layers of the stack: physical memory substrates, circuits for parallel similarity, and systems that use those primitives for modern AI workloads.</p>
+<div class="research-jump-links">
+<a href="#devices">Emerging devices</a>
+<a href="#associative-memory">Associative memory</a>
+<a href="#reasoning">Search and reasoning</a>
 </div>
+</div>
+
+<section class="thrust-detail" id="devices">
+<figure class="thrust-visual">
+<img src="images/research_substrates.png" alt="Three-dimensional memristive memory arrays and efficiency comparisons" width="543" height="337" loading="lazy" />
+<figcaption>Emerging memories can combine storage, local dynamics, and computation within the same physical substrate.</figcaption>
+</figure>
+<div class="thrust-body">
+<p class="eyebrow">01 / EMERGING DEVICES</p>
+<h2>Memristive Substrates and Circuits</h2>
+<p class="thrust-question"><b>Research question:</b> Which device and circuit primitives let memory execute similarity, local dynamics, and feedback with minimal data movement?</p>
+<p>Current evidence includes collaborative work on memristive cellular neural network hardware that combines a 65 nm CMOS network, multilevel nonvolatile memristor synapses, and a digital twin for image and partial differential equation processing.</p>
+<p class="evidence-links"><b>Selected evidence:</b> <a href="https://doi.org/10.1038/s41928-025-01555-3" target="_blank" rel="noopener">Memristive cellular neural networks, <i>Nature Electronics</i> (2026)</a></p>
+<p class="next-direction"><b>Next direction:</b> Nonvolatile and three-dimensional memory structures that support similarity search, local interaction, and feedback without repeatedly returning data to a processor.</p>
+</div>
+</section>
+
+<section class="thrust-detail" id="associative-memory">
+<figure class="thrust-visual">
+<img src="images/research_camcircuits.png" alt="CAMformer maps transformer attention onto a content-addressable memory array" width="1670" height="502" loading="lazy" />
+<figcaption>Associative-memory circuits compare a query against many stored keys in parallel.</figcaption>
+</figure>
+<div class="thrust-body">
+<p class="eyebrow">02 / ASSOCIATIVE MEMORY</p>
+<h2>Associative-Memory Circuits and Architectures</h2>
+<p class="thrust-question"><b>Research question:</b> How can similarity search and attention become native memory operations instead of dense arithmetic followed by data movement?</p>
+<p><a href="projects/camformer.html">CAMformer</a> maps binary attention to a voltage-domain CAM and a sparse top-k pipeline. <a href="projects/monosparse-cam.html">MonoSparse-CAM</a> uses tree-model sparsity and matchline monotonicity to skip redundant CAM operations. Related work studies scalable NoC-partitioned arrays and synthesizes the design space across 37 CAM cells.</p>
+<p class="evidence-links"><b>Selected work:</b> <a href="projects/camformer.html">CAMformer</a> &middot; <a href="projects/monosparse-cam.html">MonoSparse-CAM</a> &middot; <a href="https://arxiv.org/abs/2502.01770" target="_blank" rel="noopener">Hamming Attention Distillation</a> &middot; <a href="https://doi.org/10.1109/TCSI.2025.3527309" target="_blank" rel="noopener">CAM circuits survey</a> &middot; <a href="https://doi.org/10.1109/HPCA68181.2026.11408550" target="_blank" rel="noopener">NP-CAM</a></p>
+<p class="next-direction"><b>Next direction:</b> Programmable associative arrays that support multiple similarity operations while remaining robust to device and circuit variation.</p>
+</div>
+</section>
+
+<section class="thrust-detail" id="reasoning">
+<figure class="thrust-visual">
+<img src="images/research_inference.png" alt="Multi-primitive in-memory accelerator for Monte Carlo tree search" width="910" height="518" loading="lazy" />
+<figcaption>Search and reasoning require several memory operations coordinated through a feedback loop.</figcaption>
+</figure>
+<div class="thrust-body">
+<p class="eyebrow">03 / SEARCH AND REASONING</p>
+<h2>Hardware for Inference and Reasoning</h2>
+<p class="thrust-question"><b>Research question:</b> How can memory systems support irregular, multi-phase search and the feedback needed for test-time computation?</p>
+<p><a href="projects/imc-mcts.html">IMC-MCTS</a> decomposes Monte Carlo tree search into five memory and logic primitives, then coordinates them as one accelerator. Complementary work maps neuro-symbolic policies to CAM lookup, connecting learned perception with efficient rule execution.</p>
+<p class="evidence-links"><b>Selected work:</b> <a href="projects/imc-mcts.html">IMC-MCTS</a> &middot; <a href="https://proceedings.mlr.press/v288/molom-ochir25a.html" target="_blank" rel="noopener">Efficient Neuro-Symbolic Policy</a></p>
+<p class="next-direction"><b>Next direction:</b> Memory fabrics with local update and feedback that make multi-step search and test-time reasoning energy efficient.</p>
+</div>
+</section>
+
+</main>
 </body>
 </html>

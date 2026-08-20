@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://tmo324.github.io/projects/camformer.html" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="CAMformer is Tergel Molom-Ochir's first-author TCAS-I work on voltage-domain associative memory for efficient transformer attention." />
+<meta name="author" content="Tergel Molom-Ochir" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="CAMformer | Tergel Molom-Ochir" />
+<meta property="og:description" content="Binary associative memory for efficient transformer attention, evaluated in 65 nm HSPICE and synthesis." />
+<meta property="og:url" content="https://tmo324.github.io/projects/camformer.html" />
+<meta property="og:image" content="https://tmo324.github.io/images/research_camcircuits.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="../jemdoc.css" type="text/css" />
+<link rel="shortcut icon" type="image/x-icon" href="../misc/favicon.ico" />
+<title>CAMformer | Tergel Molom-Ochir</title>
+</head>
+<body>
+<nav id="top-nav" aria-label="Primary">
+<div class="nav-inner">
+<a class="site-name" href="../">Tergel Molom-Ochir</a>
+<div class="nav-links">
+<a href="../">About</a>
+<a href="../research.html" class="current">Research</a>
+<a href="../publications.html">Publications</a>
+<a href="../activities.html">Teaching &amp; Service</a>
+<a href="../files/CV_Tergel_Molom-Ochir.pdf" target="_blank" rel="noopener">CV</a>
+</div>
+</div>
+</nav>
+
+<main id="layout-content" class="project-page">
+<p class="project-breadcrumb"><a href="../research.html">Research</a> / Associative-memory architectures</p>
+<header class="project-header">
+<p class="project-kicker">IEEE TCAS-I 2026 &middot; First and Corresponding Author</p>
+<h1>CAMformer: Binary Associative Memory Is All You Need</h1>
+<p class="project-lead">CAMformer replaces much of transformer attention's dense arithmetic and score movement with parallel associative-memory retrieval.</p>
+<div class="project-actions">
+<a class="button-link primary" href="https://doi.org/10.1109/TCSI.2026.3692014" target="_blank" rel="noopener">Published paper</a>
+<a class="button-link" href="https://arxiv.org/abs/2511.19740" target="_blank" rel="noopener">Preprint</a>
+</div>
+</header>
+
+<figure class="project-hero">
+<img src="../images/research_camcircuits.png" alt="CAMformer maps binary transformer attention onto a voltage-domain content-addressable memory array" width="1670" height="502" />
+<figcaption>Binary queries are compared with stored keys in parallel, then a hierarchical top-k pipeline selects values for contextualization.</figcaption>
+</figure>
+
+<div class="metric-grid" role="group" aria-label="CAMformer headline results">
+<div class="metric-card"><p class="metric-value">9,045</p><p class="metric-label">queries per mJ, a reported 10&times; attention-layer energy-efficiency gain</p></div>
+<div class="metric-card"><p class="metric-value">191</p><p class="metric-label">queries per ms, a reported up to 4&times; attention-layer throughput gain</p></div>
+<div class="metric-card"><p class="metric-value">0.26 mm<sup>2</sup></p><p class="metric-label">single-core area, reported as 6&ndash;8&times; smaller</p></div>
+<div class="metric-card"><p class="metric-value">1.12%</p><p class="metric-label">mean PVT sensing error, reported as 7&times; lower</p></div>
+</div>
+
+<section class="project-section">
+<h2>Problem</h2>
+<p>Transformer attention compares every query with every key. The arithmetic, intermediate scores, and data movement therefore grow quadratically with sequence length. CAMformer asks whether attention can instead be implemented as a memory lookup whose physical operation is similarity search.</p>
+</section>
+
+<section class="project-section">
+<h2>Approach</h2>
+<ul class="project-points">
+<li><p><b>Voltage-domain Binary Attention CAM:</b> a 10T1C cell performs XNOR comparison, while charge sharing across a 22 fF capacitor makes matchline voltage track Hamming similarity.</p></li>
+<li><p><b>Hierarchical sparse selection:</b> the accelerator keeps the top two scores in each 16-score tile, refines 128 candidates to a global top-32, and applies softmax only to those candidates.</p></li>
+<li><p><b>Cross-layer attention design:</b> Hamming Attention Distillation supplies binary queries and keys while values remain BF16, connecting model training to the CAM datapath.</p></li>
+</ul>
+</section>
+
+<section class="project-section role-section">
+<h2>My Role</h2>
+<p>As first and corresponding author, I led the cross-layer design of CAMformer, from voltage-domain associative sensing through the sparse attention pipeline and system evaluation.</p>
+</section>
+
+<aside class="method-note">
+<h2>How to Read the Results</h2>
+<p>The hardware results are simulation-based: 65 nm HSPICE for the CAM circuits and synthesis for the digital logic. The reported energy, throughput, and area comparisons are attention-layer metrics, not measurements from a fabricated full transformer chip. Model evaluation covers BERT-Large, ViT, and GPT-2; on GLUE, hierarchical top-k changes the average score by 0.33 percentage points.</p>
+</aside>
+
+<section class="project-section">
+<h2>Citation</h2>
+<div class="citation-box">
+<p><b>T. Molom-Ochir</b>, B. F. Morris, M. Horton, C. Wei, C. Guo, B. Taylor, P. Liu, S. X. Wang, D. Fan, H. Li, and Y. Chen, "CAMformer: Binary Associative Memory Is All You Need," <i>IEEE Transactions on Circuits and Systems I: Regular Papers</i>, pp. 1&ndash;14, 2026. <a href="https://doi.org/10.1109/TCSI.2026.3692014" target="_blank" rel="noopener">DOI</a></p>
+</div>
+</section>
+
+<section class="related-projects">
+<h2>Related Projects</h2>
+<div class="related-grid">
+<a class="related-card" href="monosparse-cam.html"><b>MonoSparse-CAM</b><span>Skip redundant work in tree-model CAM processing.</span></a>
+<a class="related-card" href="imc-mcts.html"><b>IMC-MCTS</b><span>Coordinate multiple memory primitives for tree search.</span></a>
+</div>
+</section>
+</main>
+</body>
+</html>
