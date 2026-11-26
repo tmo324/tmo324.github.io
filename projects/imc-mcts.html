@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://tmo324.github.io/projects/imc-mcts.html" />
 <meta property="og:image" content="https://tmo324.github.io/images/research_inference.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="../jemdoc.css" type="text/css" />
+<link rel="stylesheet" href="../site.css" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon" href="../misc/favicon.ico" />
 <title>IMC-MCTS | Tergel Molom-Ochir</title>
 </head>
@@ -21,7 +21,7 @@
 <div class="nav-inner">
 <a class="site-name" href="../">Tergel Molom-Ochir</a>
 <div class="nav-links">
-<a href="../">About</a>
+<a href="../">Home</a>
 <a href="../research.html" class="current">Research</a>
 <a href="../publications.html">Publications</a>
 <a href="../activities.html">Teaching &amp; Service</a>
@@ -42,17 +42,13 @@
 </div>
 </header>
 
-<figure class="project-hero project-hero-contained">
-<img src="../images/research_inference.png" alt="IMC-MCTS architecture connecting CAM, SRAM, RRAM, combinational logic, and TCAM control" width="910" height="518" />
-<figcaption>Each phase of Monte Carlo tree search is mapped to a matching compute or memory primitive and orchestrated through a feedback loop.</figcaption>
-</figure>
-
-<div class="metric-grid" role="group" aria-label="IMC-MCTS evaluation scale and modeled results">
-<div class="metric-card"><p class="metric-value">124.18 mJ</p><p class="metric-label">modeled energy per 9&times;9 Go move at 5,000 search iterations</p></div>
-<div class="metric-card"><p class="metric-value">60.26 mW</p><p class="metric-label">modeled sustained accelerator power in the evaluated setup</p></div>
-<div class="metric-card"><p class="metric-value">1,050 games</p><p class="metric-label">9&times;9 Go round-robin evaluation at 500 simulations per move</p></div>
-<div class="metric-card"><p class="metric-value">8 applications</p><p class="metric-label">mapped across four domains to test substrate reuse</p></div>
-</div>
+<h2>Reported Results</h2>
+<ul class="results">
+<li><b>124.18 mJ</b>: modeled energy per 9&times;9 Go move at 5,000 search iterations</li>
+<li><b>60.26 mW</b>: modeled sustained accelerator power in the evaluated setup</li>
+<li><b>1,050 games</b>: 9&times;9 Go round-robin evaluation at 500 simulations per move</li>
+<li><b>8 applications</b>: mapped across four domains to test substrate reuse</li>
+</ul>
 
 <section class="project-section">
 <h2>Problem</h2>

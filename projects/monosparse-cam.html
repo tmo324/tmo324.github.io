@@ -15,7 +15,7 @@
 <meta property="og:image:height" content="640" />
 <meta property="og:image:alt" content="MonoSparse-CAM method: group active cells and track live matchlines to skip redundant CAM operations" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="../jemdoc.css" type="text/css" />
+<link rel="stylesheet" href="../site.css" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon" href="../misc/favicon.ico" />
 <title>MonoSparse-CAM | Tergel Molom-Ochir</title>
 </head>
@@ -24,7 +24,7 @@
 <div class="nav-inner">
 <a class="site-name" href="../">Tergel Molom-Ochir</a>
 <div class="nav-links">
-<a href="../">About</a>
+<a href="../">Home</a>
 <a href="../research.html" class="current">Research</a>
 <a href="../publications.html">Publications</a>
 <a href="../activities.html">Teaching &amp; Service</a>
@@ -45,17 +45,13 @@
 </div>
 </header>
 
-<figure class="project-hero project-hero-contained">
-<img src="../images/project_monosparse.svg" alt="MonoSparse-CAM groups active feature cells and tracks live matchlines to skip redundant operations" width="1200" height="640" />
-<figcaption>Feature reordering skips empty tiles, while a status register prevents later work on matchlines that have already discharged.</figcaption>
-</figure>
-
-<div class="metric-grid" role="group" aria-label="MonoSparse-CAM headline results">
-<div class="metric-card"><p class="metric-value">28.56&times;</p><p class="metric-label">maximum energy reduction versus raw CAM processing</p></div>
-<div class="metric-card"><p class="metric-value">18.51&times;</p><p class="metric-label">maximum energy reduction versus the prior feature-reordering technique</p></div>
-<div class="metric-card"><p class="metric-value">0.40 &micro;J</p><p class="metric-label">mean across sparsity levels for a 240&times;320 model on a 24&times;48 CAM, versus 3.77 &micro;J raw</p></div>
-<div class="metric-card"><p class="metric-value">418 GOPS/W</p><p class="metric-label">peak simulated computational efficiency</p></div>
-</div>
+<h2>Reported Results</h2>
+<ul class="results">
+<li><b>28.56&times;</b>: maximum energy reduction versus raw CAM processing</li>
+<li><b>18.51&times;</b>: maximum energy reduction versus the prior feature-reordering technique</li>
+<li><b>0.40 &micro;J</b>: mean across sparsity levels for a 240&times;320 model on a 24&times;48 CAM, versus 3.77 &micro;J raw</li>
+<li><b>418 GOPS/W</b>: peak simulated computational efficiency</li>
+</ul>
 
 <section class="project-section">
 <h2>Problem</h2>

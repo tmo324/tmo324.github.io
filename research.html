@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://tmo324.github.io/misc/profile.jpg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@tmolomochir" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<link rel="stylesheet" href="site.css" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon" href="misc/favicon.ico" />
 <title>Research | Tergel Molom-Ochir</title>
 </head>
@@ -23,7 +23,7 @@
 <div class="nav-inner">
 <a class="site-name" href="/">Tergel Molom-Ochir</a>
 <div class="nav-links">
-<a href="/">About</a>
+<a href="/">Home</a>
 <a href="research.html" class="current">Research</a>
 <a href="publications.html">Publications</a>
 <a href="activities.html">Teaching &amp; Service</a>
@@ -47,12 +47,7 @@
 </div>
 
 <section class="thrust-detail" id="devices">
-<figure class="thrust-visual">
-<img src="images/research_substrates.png" alt="Three-dimensional memristive memory arrays and efficiency comparisons" width="543" height="337" loading="lazy" />
-<figcaption>Emerging memories can combine storage, local dynamics, and computation within the same physical substrate.</figcaption>
-</figure>
 <div class="thrust-body">
-<p class="eyebrow">01 / EMERGING DEVICES</p>
 <h2>Memristive Substrates and Circuits</h2>
 <p class="thrust-question"><b>Research question:</b> Which device and circuit primitives let memory execute similarity, local dynamics, and feedback with minimal data movement?</p>
 <p>Current evidence includes collaborative work on memristive cellular neural network hardware that combines a 65 nm CMOS network, multilevel nonvolatile memristor synapses, and a digital twin for image and partial differential equation processing.</p>
@@ -62,12 +57,7 @@
 </section>
 
 <section class="thrust-detail" id="associative-memory">
-<figure class="thrust-visual">
-<img src="images/research_camcircuits.png" alt="CAMformer maps transformer attention onto a content-addressable memory array" width="1670" height="502" loading="lazy" />
-<figcaption>Associative-memory circuits compare a query against many stored keys in parallel.</figcaption>
-</figure>
 <div class="thrust-body">
-<p class="eyebrow">02 / ASSOCIATIVE MEMORY</p>
 <h2>Associative-Memory Circuits and Architectures</h2>
 <p class="thrust-question"><b>Research question:</b> How can similarity search and attention become native memory operations instead of dense arithmetic followed by data movement?</p>
 <p><a href="projects/camformer.html">CAMformer</a> maps binary attention to a voltage-domain CAM and a sparse top-k pipeline. <a href="projects/monosparse-cam.html">MonoSparse-CAM</a> uses tree-model sparsity and matchline monotonicity to skip redundant CAM operations. Related work studies scalable NoC-partitioned arrays and synthesizes the design space across 37 CAM cells.</p>
@@ -77,12 +67,7 @@
 </section>
 
 <section class="thrust-detail" id="reasoning">
-<figure class="thrust-visual">
-<img src="images/research_inference.png" alt="Multi-primitive in-memory accelerator for Monte Carlo tree search" width="910" height="518" loading="lazy" />
-<figcaption>Search and reasoning require several memory operations coordinated through a feedback loop.</figcaption>
-</figure>
 <div class="thrust-body">
-<p class="eyebrow">03 / SEARCH AND REASONING</p>
 <h2>Hardware for Inference and Reasoning</h2>
 <p class="thrust-question"><b>Research question:</b> How can memory systems support irregular, multi-phase search and the feedback needed for test-time computation?</p>
 <p><a href="projects/imc-mcts.html">IMC-MCTS</a> decomposes Monte Carlo tree search into five memory and logic primitives, then coordinates them as one accelerator. Complementary work maps neuro-symbolic policies to CAM lookup, connecting learned perception with efficient rule execution.</p>
